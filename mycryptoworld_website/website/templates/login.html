@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <style>
+        .background {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1879px;
+            height: 1010px;
+        }
+
+        .formdiv {
+            position: absolute;
+            left: 789px;
+            top: 370px;
+            width: 320px;
+            height: 400px;
+        }
+
+        .labels {
+            color: rgb(137, 147, 54);
+            font-size: 22px;
+            padding-left: 20px;
+        }
+
+        .username {
+            width: 280px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: transparent;
+            border-color: rgb(180, 193, 74);
+            border-width: 2px;
+            font-size: 22px;
+            padding-left: 20px;
+            color: rgb(137, 147, 54);
+        }
+
+        .email {
+            width: 280px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: transparent;
+            border-color: rgb(137, 147, 54);
+            border-width: 2px;
+            font-size: 22px;
+            padding-left: 20px;
+            color: rgb(137, 147, 54);
+        }
+
+        .password {
+            width: 280px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: transparent;
+            border-color: rgb(137, 147, 54);
+            border-width: 2px;
+            font-size: 22px;
+            padding-left: 20px;
+            color: rgb(137, 147, 54);
+        }
+
+        .submitbutton {
+            color: rgb(137, 147, 54);
+            border-radius: 10px;
+            background-color: transparent;
+            border-color: rgb(137, 147, 54);
+            border-width: 2px;
+            font-size: 22px;
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            left: 75px;
+            top: 150px;
+        }
+
+        .loginlabel {
+            position: absolute;
+            color: rgb(137, 147, 54);
+            left: 880px;
+            top: 310px;
+            font-size: 38px;
+            font-weight: bold;
+            font-family: 'Secular One', sans-serif;
+        }
+        .registerlabel {
+            position: absolute;
+            color: rgb(137, 147, 54);
+            top: 200px;
+            left: 30px;
+        }
+
+        .hreflogin {
+            color: rgb(252, 252, 252);
+            text-decoration: none;
+        }
+        @media only screen and (max-width:1080px) {
+            html, body {
+                background-color: rgb(33, 33, 33);
+                overflow-x: hidden;
+            }
+
+            .background {
+                position: relative;
+                left: -575px;
+                right: -500px;
+                width: 2100px;
+                height: 1181px;
+            }
+
+            .loginlabel {
+                top: 350px;
+                left: 410px;
+                font-size: 60px;
+            }
+
+            .formdiv {
+                left: 330px;
+                top: 430px;
+            }
+
+            .submitbutton {
+                top: 180px;
+            }
+
+            .registerlabel {
+                top: 240px;
+                left: 20px;
+            }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <img src="{% static 'background.jpg' %}" class="background" />
+    <label class="loginlabel"> Login </label>
+    <div class="formdiv">
+        <form action="" method="post">
+            {% csrf_token %}
+            <label class="labels"> Username </label>
+            <input name="username" class="username" required />     
+            <label class="labels"> Password </label>
+            <input name="password" class="password" type="password" required />
+            <input class="submitbutton" type="submit" value="Login" />
+
+        </form>
+        <label class="registerlabel">you dont have an account?<a href="/" class="hreflogin"> Create one here</a></label>
+    </div>
+</body>
+</html>

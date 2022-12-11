@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Profile</title>
+    <style>
+        .background {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1879px;
+            height: 1010px;
+        }
+        .logoutbutton {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: transparent;
+            border-color: rgb(137, 147, 54);
+            border-width: 2px;
+            font-size: 22px;
+            color: rgb(137, 147, 54);
+        }
+        .divpos {
+            position: absolute;
+            left: 798px;
+            top: 355px;
+            width: 300px;
+            height: 300px;
+            
+
+        }
+        .value1 {
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            left: 70px;
+            top: 40px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(191, 194, 167);
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 28px;
+            color: rgb(194, 215, 18);
+        }
+        .value2 {
+            position: absolute;
+            width: 250px;
+            height: 40px;
+            left: 20px;
+            top: 150px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(191, 194, 167);
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 28px;
+            color: rgb(194, 215, 18);
+        }
+        @media only screen and (max-width:1080px) {
+            html, body {
+                background-color: rgb(33, 33, 33);
+                overflow-x: hidden;
+            }
+
+            .background {
+                position: relative;
+                left: -575px;
+                right: -500px;
+                width: 2100px;
+                height: 1181px;
+            }
+
+            .logoutbutton {
+                border-width: 5px;
+                top: 200px;
+                right: 50px;
+            }
+
+            .divpos {
+                left:335px;
+            }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <img src="{% static 'background.jpg' %}" class="background" />
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" class="logoutbutton" value="Logout"/>
+    </form>
+    <div class="divpos">
+        <div class="value1">
+            {{ excelvalue1 }}$
+        </div>
+
+        <div class="value2">
+            $ {{ excelvalue2 }}
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>
